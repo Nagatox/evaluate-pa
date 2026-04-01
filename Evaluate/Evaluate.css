@@ -1,0 +1,743 @@
+﻿
+@import url("fonts/th_k2d_july8.css"); 
+
+body {
+}
+
+.a_button 
+{
+    cursor:pointer;
+    color: #000000;
+    text-decoration: none;
+}
+
+#imglogo
+{
+    float: left;
+}
+#namesystem
+{
+    position:absolute;
+    margin-left:10px;
+    top: 25px;
+    font-size:18px;
+    font-family:  THK2DJuly8;
+    font-weight:bold;
+    vertical-align:bottom;
+}
+
+.menuAdmin 
+{
+    visibility:hidden;
+}
+
+.hidden
+{
+	display:none;
+}
+
+.UpdateProgressContent{
+    padding: 40px;
+    border: 1px dashed #C0C0C0;
+    background-color: #FFFFFF;
+    width: 200px;
+    text-align: center;
+    vertical-align: bottom;
+    z-index: 1001;
+    top: 40%;
+    left: 40%;
+    position: absolute;
+}
+.UpdateProgressBackground
+{
+    margin:0px;
+    padding:0px;
+    top:0px; bottom:0px; left:0px; right:0px;
+    position:absolute;
+    z-index:1000;
+    background-color:#cccccc;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.headform 
+{
+    width:150px;
+    font-size:150%;
+    font-family:"Times New Roman",Georgia,Serif;
+    text-align:right;
+    font-weight: bold;
+    text-decoration:underline;
+}
+.headformtype
+{
+    width:150px;
+    font-size:150%;
+    font-family:"Times New Roman",Georgia,Serif;
+    text-align:right;
+    font-weight: bold;
+    text-decoration:underline;
+}
+.headtitlelonglong
+{
+    width:150px;
+    font-size:120%;
+    font-family:"Times New Roman",Georgia,Serif;
+    text-align:right;
+    font-weight: bold;
+}
+.headtitlelong 
+{
+    width:250px;
+    font-size:120%;
+    font-family:"Times New Roman",Georgia,Serif;
+    text-align:right;
+    font-weight: bold;
+}
+.headtitle 
+{
+    width:150px;
+    font-size:120%;
+    font-family:"Times New Roman",Georgia,Serif;
+    text-align:right;
+    font-weight: bold;
+}
+.headtitle_no
+{
+    width:50px;
+}
+.headvalue
+{
+    font-size:120%;
+    font-family:"Times New Roman",Georgia,Serif;
+    text-align:left;
+    text-decorationx:underline;
+}
+.tdValue 
+{
+    vertical-align:top;
+    text-align:center;
+}
+.txtWeight
+{
+    text-align:center;
+   
+}
+.lblSumWeight100
+{
+    color:Green;
+}
+.lblSumWeightLeastThan
+{
+    color:Red;
+}
+.lblSumWeightMoreThan
+{
+    color:Red;
+}
+
+
+#divEvaluate 
+{
+ 
+}
+
+#tblEvaluateForm
+{
+    border: 2px solid black;    
+}
+#tblEvaluateForm thead tr th
+{
+    border: 1px solid black;    
+    vertical-align:middle;
+}
+#tblEvaluateForm tbody tr td
+{
+    border: 1px solid black;
+    vertical-align:top;
+    text-align:center;
+}
+#tblEvaluateForm tbody tr
+{
+}
+#tblEvaluateForm tfoot tr td
+{
+    border: 1px solid black;
+    vertical-align:middle;
+}
+#tblEvaluateForm tfoot tr 
+{
+    height:25px;
+}
+
+#divEmployeeList {
+    width: 100%;
+    max-height: 800px; /* ปรับความสูงตามต้องการ */
+    overflow-y: auto;  /* ทำให้เลื่อนในแนวตั้งได้ */
+    border: 1px solid #ccc;
+}
+#tableEmployeeList
+{
+    border: 2px solid black;
+    width:100%;  
+}
+#tableEmployeeList thead tr th
+{
+    top: 0;           /* ติดไว้ที่ขอบบนสุด */
+    position: sticky;
+    border: 1px solid black;    
+    color: #333;
+    background-color: #ccc;
+    vertical-align:middle;
+    z-index: 1;       /* มั่นใจว่าอยู่เหนือแถวอื่นๆ */
+    /*padding: 12px;*/
+    text-align: center;    
+}
+#tableEmployeeList thead tr 
+{
+    height:25px;
+}
+#tableEmployeeList tbody tr td
+{
+    border: 1px solid black;
+    vertical-align:middle;
+    text-align:center;
+}
+#tableEmployeeList tbody tr
+{
+    height:25px;
+}
+#tableEmployeeList tfoot tr td
+{
+    border: 1px solid black;
+    vertical-align:middle;
+}
+#tableEmployeeList tfoot tr 
+{
+    height:25px;
+}
+#tableEmployeeList tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#tblPart02
+{
+    border: 2px solid black;
+    width:100%;  
+}
+#tblPart02 thead tr th
+{
+    border: 1px solid black;    
+    vertical-align:middle;
+    width:50%;
+}
+#tblPart02 thead tr 
+{
+    height:25px;
+}
+#tblPart02 tbody tr td
+{
+    border: 1px solid black;
+    vertical-align:top;
+    text-align:left;
+}
+#tblPart02 tbody tr
+{
+    height:25px;
+}
+#tblPart02 tfoot tr td
+{
+    border: 1px solid black;
+    vertical-align:middle;
+}
+#tblPart02 tfoot tr 
+{
+    height:25px;
+}
+
+#tblPart03
+{
+    border: 2px solid black;
+    width:100%;  
+}
+#tblPart03 thead tr th
+{
+    border: 1px solid black;    
+    vertical-align:middle;
+    width:50%;
+}
+#tblPart03 thead tr 
+{
+    height:25px;
+}
+#tblPart03 tbody tr td
+{
+    border: 1px solid black;
+    vertical-align:top;
+    text-align:left;
+}
+#tblPart03 tbody tr
+{
+    height:25px;
+}
+#tblPart03 tfoot tr td
+{
+    border: 1px solid black;
+    vertical-align:middle;
+}
+#tblPart03 tfoot tr 
+{
+    height:25px;
+}
+
+#tblPart0401 
+{
+    width:100%;
+}
+
+#tblPart0402 
+{
+    width:100%;
+    border: 2px solid black;
+    background-color: hsl(188, 70%, 60%);
+}
+
+/* Dev Form */
+.classDevFormX thead { border: 1px solid black; }
+.classDevForm
+{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    xwidth:100%;  
+    width:450px;
+    padding:0px;
+    margin:0px;  
+}
+.classDevForm thead tr th
+{
+    border: 1px solid black;    
+    vertical-align:middle;
+}
+.classDevForm thead tr 
+{
+    height:25px;
+}
+.classDevForm tbody tr td
+{
+    border: 1px solid black;
+    vertical-align:top;
+    text-align:center;
+}
+.classDevForm tbody tr
+{
+    height:25px;
+}
+.classDevForm tfoot tr td
+{
+    border: 1px solid black;
+    vertical-align:middle;
+}
+.classDevForm tfoot tr 
+{
+    height:25px;
+}
+
+/* Commander Form */
+
+.classCommanderForm
+{
+    border: 2px solid black;
+    width:100%;  
+    xwidth:600px;  
+}
+.classCommanderForm thead tr th
+{
+    border: 1px solid black;    
+    vertical-align:middle;
+}
+.classCommanderForm thead tr 
+{
+    height:25px;
+}
+.classCommanderForm tbody tr th
+{
+    border: 1px solid black;
+    vertical-align:top;
+    text-align:left;
+}
+.classCommanderForm tbody tr td
+{
+    xborder: 1px solid black;
+    vertical-align:top;
+    text-align:left;
+}
+.classCommanderForm tbody tr
+{
+    height:25px;
+}
+.classCommanderForm tfoot tr td
+{
+    border: 1px solid black;
+    vertical-align:middle;
+}
+.classCommanderForm tfoot tr 
+{
+    height:25px;
+}
+
+/**********************************/
+
+#tblNote
+{
+    width:100%;  
+}
+#tblNote tr td
+{
+    vertical-align:middle;
+}
+
+#tblNoteRight
+{
+    border: 2px solid black;
+    width:100%;  
+}
+#tblNoteRight tr
+{
+    height:20px;
+}
+#tblNoteRight tr th
+{
+    border: 1px solid black;    
+    vertical-align:middle;
+}
+#tblNoteRight tr td
+{
+    border: 1px solid black;    
+    vertical-align:middle;
+}
+
+#tblEvaluatePopup
+{
+    width:100%;  
+}
+/* frmEvaluatePart00.aspx */
+#divMainPart0201 { display:none; }
+#divMainPart03 { display:none; }
+.divSumScore25 { display:none; }
+.trPart01S04 { display:none; }
+#tblPart01S04   
+{
+    width:auto;
+    border-style: dotted;
+    border-width: 1px;
+}
+
+/* frmEvaluatePart03 divEmployeeForm classDevForm */
+.thNo { width:30px; }
+.thDelete { width:30px; }
+.thFormDetail { width:540px; font-weight:bold; }
+
+/* frmEvaluatePart02 */
+.thFormNo {  background-color:#9CF; width:30px; text-align: center !important;  border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; border-left: 1px solid #000; }
+.thFormScore { background-color:#9CF; width:80px;  border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thFormDetail { background-color:#9CF; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thFormScoreA { background-color:#70DBDB; width:80px;  border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thFormScoreB { background-color:#DBDBDB; width:80px;  border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thFormDetailA { background-color:#DBDBDB; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+
+.thbFormNo {  background-color:#9CF; width:30px; text-align: center !important;  border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; border-left: 1px solid #000; }
+.thbFormScore { background-color:#9CF; width:80px;  border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thbFormDetail { background-color:#9CF; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thbFormScoreA { background-color:#70DBDB; width:80px;  border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thbFormScoreB { background-color:#DBDBDB; width:80px;  border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thbFormDetailA { background-color:#DBDBDB; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+
+.tdmFormNo {  background-color:#9CF; text-align: center !important; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdmFormScore { text-align: center !important; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdmFormDetail { border-left: 1px solid #000; border-top: 1px solid #000; border-right: 1px solid #000; }
+.tdmFormScoreA { background-color:#70DBDB; border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdmFormScoreB { background-color:#DBDBDB; border-top: 1px solid #000; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdmFormDetailA { background-color:#DBDBDB; border-top: 1px solid #000; border-left: 1px solid #000; border-right: 1px solid #000; }
+
+.tdFormNo {  background-color:#9CF; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdFormScore { text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdFormDetail { border-left: 1px solid #000; border-right: 1px solid #000; }
+.tdFormScoreA { background-color:#70DBDB; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdFormScoreB { background-color:#DBDBDB; text-align: center !important;  border-left: 1px solid #000; border-right: 1px solid #000;  }
+.tdFormDetailA { background-color:#DBDBDB; border-left: 1px solid #000; border-right: 1px solid #000; }
+
+/* frmEvaluatePart03 */
+.thDevFormHead { background-color:#9CF; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thDevFormCHead { background-color:#9CC; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.thDevFormHeadSpace { background-color:#9CF; width:30px; border: 1px solid #000; }
+.tdmDevFormNo { background-color:#9CF; width:30px; text-align: center !important; border-left: 1px solid #000; border-right: 1px solid #000; }
+.tdmDevFormDetail { background-color:#9CF; text-align: left !important; border-left: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; }
+.tdmDevFormDelete { background-color:#9CF; width:50px; text-align: center !important; border-left: 1px solid #000; border-right: 1px solid #000; }
+.tdDevFormNo {  width:30px; text-align: center !important; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.tdDevFormDetail { text-align: left !important;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.tdDevFormDelete { background-color:#C99; width:50px; text-align: center !important; border-top: 1px solid #000;  border-left: 1px solid #000; border-right: 1px solid #000; }
+.tfDevFormAdd { text-align: center !important; }
+.tdmDevFormCNo { background-color:#9CC; width:30px; text-align: center !important; border-left: 1px solid #000; border-right: 1px solid #000; }
+.tdmDevFormCDetail { background-color:#9CC; text-align: left !important; border-left: 1px solid #000; border-right: 1px solid #000; border-bottom: 1px solid #000; }
+.tdmDevFormCDelete { background-color:#9CC; width:50px; text-align: center !important; border-left: 1px solid #000; border-right: 1px solid #000; }
+
+#divDevFormEmployee
+{
+    display:inline-block;
+    vertical-align:top;
+}
+
+#divDevFormCommander 
+{
+    display:inline-block;
+}
+
+
+/* frmEvaluateForm */
+.thOrder { }
+.thDetail { background-color:#99CCFF; }
+.thWeight { background-color:#99CCFF; }
+.thPLLevel { background-color:#70DBDB;}
+.thPLScore { background-color:#FFFF66; }
+.thSuccessLevel { background-color:#FF9933; }
+.thSuccessScore { background-color:#6699FF; }
+
+.tdPLLevel { background-color:#70DBDB;}
+.tdPLScore { background-color:#FFFF66; }
+.tdSuccessLevel { background-color:#FFFFFF; }
+.tdSuccessScore { background-color:#6699FF; }
+
+.tdFootPLLevel { background-color:#70DBDB;}
+.tdFootPLScore { background-color:#FFFF66; }
+.tdFootSuccessLevel { background-color:#FFFFFF; }
+.tdFootSuccessScore { background-color:#6699FF; }
+.tdFootScore { background-color:#66FF99; }
+
+.addAnotherQuestion {
+    display: block;
+    margin: 1em 34%;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: .4em;
+    border-radius: .4em;
+    background: #f3f3f3;
+    font: 12px Arial, sans-serif;
+    color: #333;
+    text-decoration: none;
+    -webkit-transition: background 200ms ease-in-out;
+    -moz-transition: background 200ms ease-in-out;
+    transition: background 200ms ease-in-out;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .1), 1px 1px 8px rgba(255, 255, 255, .8) inset, -1px -1px 0 rgba(0, 0, 0, .1) inset;
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, .1), 1px 1px 8px rgba(255, 255, 255, .8) inset, -1px -1px 0 rgba(0, 0, 0, .1) inset;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .1), 1px 1px 8px rgba(255, 255, 255, .8) inset, -1px -1px 0 rgba(0, 0, 0, .1) inset;
+}
+.addAnotherQuestion:hover {
+    background-color: #e5e5e5;
+}
+.inputWrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    font: 12px Arial, sans-serif;
+    margin-top: -1px;
+}
+.inputWrapper:first-of-type {
+    border-top-left-radius: .4em;
+    border-top-right-radius: .4em;
+}
+.inputWrapper:last-of-type {
+    border-bottom-left-radius: .4em;
+    border-bottom-right-radius: .4em;
+}
+.inputWrapper .left {
+    position: absolute;
+    left: .8em;
+    top: .4em;
+    bottom: .4em;
+    right: 50%;
+}
+.inputWrapper .right {
+    margin: .4em .4em .4em 50%;
+    padding-left: .4em;
+}
+.inputWrapper dl, .inputWrapper dt, .inputWrapper dd {
+    margin: 0;
+    padding: 0;
+}
+.inputWrapper dt {
+    font-weight: bold;
+    margin: .2em 0 .4em;
+}
+.inputWrapper dd {
+    margin: 0 1em 1em;
+}
+.inputWrapper dd:last-child {
+    margin-bottom: .4em;
+}
+/* Style the textarea, making it take the full width of its containing element */
+.inputWrapper textarea {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0em;
+    padding: 0;
+    border: 0;
+    border-right: 1px dashed #ccc;
+    font-family: inherit;
+    font-size: 1em;
+    position: relative;
+    z-index: 2;
+    background: none;
+    overflow: auto;
+    resize: none;
+    -webkit-transition: background 200ms ease-in-out;
+    -moz-transition: background 200ms ease-in-out;
+    transition: background 200ms ease-in-out;
+}
+/* Put the label text under the textarea */
+.inputWrapper span.label {
+    position: absolute;
+    left: -.4em;
+    top: 0;
+}
+/* Make the textarea obscure the label text on focus */
+.inputWrapper textarea.notEmpty, textarea:focus {
+    background: white;
+}
+
+.inputWrapper input[type='text'] {
+    font-family: inherit;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    -webkit-border-radius: .2em;
+    -moz-border-radius: .2em;
+    border-radius: .2em;
+    padding: .2em .4em;
+    width: 3em;
+}
+.inputWrapper input[type='text'][disabled] {
+    background: #eee;
+}
+
+.inputWrapper .grid {
+    position: relative;
+    display: inline-block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.inputWrapper .grid .popup {
+    position: absolute;
+    left: 4em;
+    top: .4em;
+    border: 1px solid #ccc;
+    -webkit-border-radius: .4em;
+    -moz-border-radius: .4em;
+    border-radius: .4em;
+    white-space: nowrap;
+    background: #f5f5f5;
+}
+.inputWrapper .grid .popup span {
+    margin-bottom: 0;
+    margin-left: -1px;
+    border: 0;
+    border-left: 1px solid #ccc;
+    width: 1.4em;
+}
+.inputWrapper .grid .popup label:first-child span {
+    border-left: 0;
+    margin-left: 0;
+}
+.openGrid {
+    display: inline-block !important;
+    text-decoration: none;
+    color: #333;
+    margin-left: .4em;
+}
+.openGrid:hover {
+    color: #777;
+}
+.grid input:first-of-type {
+    display: none;
+}
+.grid span {
+    display: inline-block;
+    padding: .2em;
+    width: 1.2em;
+    text-align: center;
+    cursor: pointer;
+}
+.grid span:last-child {
+    border: 1px solid #ccc;
+    margin: 0 0 .32em;
+    background: #f5f5f5;
+}
+.grid span:last-child:hover {
+    background: #eee;
+}
+.grid input:checked ~ span, .grid input:checked ~ span:hover {
+    background: #ddd;
+}
+
+.lblConfirmed { color:#0a7b10; }
+.lblUnComfirmed { color:#c9460a; }
+
+
+#tblEvaluateFormPA th { border: 1px solid #999; }
+#tblEvaluateFormPA td { border: 1px solid #999; }
+
+.thPANo{ background-color:#eff172; }
+.thPADetail { background-color:#eff172; vertical-align: middle; }
+.thPAWeight { background-color:#eff172; vertical-align: middle; }
+.thPAMonth { background-color:#eff172; vertical-align: middle; }
+.thPAKPI { background-color:#eff172; vertical-align: middle; }
+.thPASTG { background-color:#eff172; vertical-align: middle; }
+.thPAComment { background-color:#d3d3d3; vertical-align: middle; }
+
+.trPARowTitle { background-color:#a1dc9e; height: 25px; }
+.tdPATitle { vertical-align: middle; }
+.tdPASumWeight { text-align: center; vertical-align: middle; }
+
+.trPARowData { height: 20px; }
+
+.tdPATitle { font-weight: bold;  }
+.tdPAValue {  }
+
+.tdPANo { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPADetail { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPAWeight { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPAMonth { background-color:#eee; text-align: center;  vertical-align: top; }
+.tdPAKPI { background-color:#eee; text-align: center;  vertical-align: top; }
+.tdPASTG { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPADelete { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPAPlus { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPAComment { background-color:#eee; text-align: center;  vertical-align: top; }
+
+.InputPADetail { background-color:#000; }
+.InputPAWeight { background-color:#fff; height:2cqmax; text-align: center; }
+.InputPAMonth { background-color:#000; }
+.InputPAKPI { background-color:#000; }
+.InputPASTG { background-color:#fff; height:2cqmax }
+.InputPAComment { background-color:#000;}
+
+.trPARowFoot { background-color:#96aeea; height: 25px; }
+.tdPAFoot { font-weight: bold; height: 25px; vertical-align: middle; }
+#lblPASumWeight { font-weight: bold; }
+.trPARowTitleSuggest { background-color:#d3d3d3; height: 25px; }
+.trPARowSuggest { height: 100px; }
+.tdPASuggest { vertical-align: top; height: inherit; border: 1px solid #999; }
+#txtSuggest { width: 100%; height: 100px; }
+
+.thPALoS { background-color:#6699FF; vertical-align: middle; }
+.tdPALoS { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPAScore { background-color:#eee; text-align: center; vertical-align: top; }
+.tdPAPercent { background-color:#eee; text-align: center; vertical-align: top; }
+.thPAComment2 { background-color:#6699FF; vertical-align: middle; }
+
+#lblPASumPercent { font-weight: bold; }
+.tdPASumScore { text-align: center; vertical-align: middle; }
+.tdPASumPercent { text-align: center; vertical-align: middle; }
+.tdPASumComment { text-align: top; vertical-align: middle; }
+

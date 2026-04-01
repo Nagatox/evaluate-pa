@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C19304BA-57C2-4F8A-B28F-2CE933A1EAB9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Evaluate</RootNamespace>
+    <AssemblyName>Evaluate</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Evaluate.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Evaluate.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Open XML SDK\V2.0\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\adodb.dll" />
+    <Content Include="bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\Evaluate.dll" />
+    <Content Include="bin\Evaluate.pdb" />
+    <Content Include="bin\Evaluate.xml" />
+    <Content Include="bin\Evaluate.XmlSerializers.dll" />
+    <Content Include="bin\frmEvaluatePart02.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Default.js" />
+    <Content Include="Evaluate.css" />
+    <Content Include="Evaluate.Publish.xml" />
+    <Content Include="fonts\thsarabunnew.css" />
+    <Content Include="fonts\th_baijam.css" />
+    <Content Include="fonts\th_chakra_petch.css" />
+    <Content Include="fonts\th_fahkwang.css" />
+    <Content Include="fonts\th_k2d_july8.css" />
+    <Content Include="fonts\th_krub.css" />
+    <Content Include="frmAddEditUser.aspx" />
+    <Content Include="frmAddEditUser.js" />
+    <Content Include="frmAutoGenForm.aspx" />
+    <Content Include="frmEvaluateFormPA.aspx" />
+    <Content Include="frmEvaluateFormPA.js" />
+    <Content Include="frmFormPA.js" />
+    <Content Include="frmFormPA.aspx" />
+    <Content Include="frmEvaluateForm.aspx" />
+    <Content Include="frmEvaluateForm.js" />
+    <Content Include="frmEvaluateService.aspx" />
+    <Content Include="frmFormPACommon.js" />
+    <Content Include="frmLogin.aspx" />
+    <Content Include="frmLogout.aspx" />
+    <Content Include="frmMain.aspx" />
+    <Content Include="frmMain.css" />
+    <Content Include="frmMain.js" />
+    <Content Include="frmPAService.aspx" />
+    <Content Include="frmMainService.aspx" />
+    <Content Include="frmReport.aspx" />
+    <Content Include="frmReport.js" />
+    <Content Include="frmSuggestionForm.aspx" />
+    <Content Include="frmSuggestionForm.js" />
+    <Content Include="images\add_22.gif" />
+    <Content Include="images\add_48.png" />
+    <Content Include="images\delete_icon.bmp" />
+    <Content Include="images\downBlue.png" />
+    <Content Include="images\eProjectBanner.png" />
+    <Content Include="images\EvaluateBanner.png" />
+    <Content Include="images\EvaluateBannerx.png" />
+    <Content Include="images\excel_icon.gif" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\minus.gif" />
+    <Content Include="images\pa_status_00.PNG" />
+    <Content Include="images\pa_status_01.PNG" />
+    <Content Include="images\PD.jpg" />
+    <Content Include="images\plus.gif" />
+    <Content Include="images\remove.png" />
+    <Content Include="images\status0.gif" />
+    <Content Include="images\status4.gif" />
+    <Content Include="images\status4.png" />
+    <Content Include="images\top-block2.jpg" />
+    <Content Include="images\upBlue.png" />
+    <Content Include="images\_confirm_lock-512.png" />
+    <Content Include="includes\css\960.css" />
+    <Content Include="includes\css\ajax.css" />
+    <Content Include="includes\css\arrow.gif" />
+    <Content Include="includes\css\content.css" />
+    <Content Include="includes\css\contextmenu.css" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_0_e69700_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_0_e6b900_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_100_eeeeee_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_20_dddddd_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_20_e69700_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_22_0a82eb_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_25_c5ddfc_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_flat_26_2293f7_40x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-bg_highlight-soft_100_f9f9f9_1x100.png" />
+    <Content Include="includes\css\custom-theme\images\ui-icons_0a82eb_256x240.png" />
+    <Content Include="includes\css\custom-theme\images\ui-icons_0a82eb_256x260.png" />
+    <Content Include="includes\css\custom-theme\images\ui-icons_0b54d5_256x240.png" />
+    <Content Include="includes\css\custom-theme\images\ui-icons_333333_256x240.png" />
+    <Content Include="includes\css\custom-theme\images\ui-icons_5fa5e3_256x240.png" />
+    <Content Include="includes\css\custom-theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="includes\css\custom-theme\images\ui-icons_ffffff_256x256.png" />
+    <Content Include="includes\css\custom-theme\jquery-ui-1.8.4.custom.css" />
+    <Content Include="includes\css\ellipsis-xbl.xml" />
+    <Content Include="includes\css\grid.css" />
+    <Content Include="includes\css\header.css" />
+    <Content Include="includes\css\ie.css" />
+    <Content Include="includes\css\ie6.css" />
+    <Content Include="includes\css\jqModal.css" />
+    <Content Include="includes\css\jquery.searchFilter.css" />
+    <Content Include="includes\css\jquery.validity.css" />
+    <Content Include="includes\css\layout.css" />
+    <Content Include="includes\css\main.css" />
+    <Content Include="includes\css\menu.css" />
+    <Content Include="includes\css\modal-gloss.png" />
+    <Content Include="includes\css\nav.css" />
+    <Content Include="includes\css\reset.css" />
+    <Content Include="includes\css\reveal.css" />
+    <Content Include="includes\css\Scroll.css" />
+    <Content Include="includes\css\sidebar.css" />
+    <Content Include="includes\css\text.css" />
+    <Content Include="includes\css\ui.jqgrid.css" />
+    <Content Include="includes\css\ui.multiselect.css" />
+    <Content Include="includes\images\arrow_over.gif" />
+    <Content Include="includes\images\calendar.png" />
+    <Content Include="includes\images\contextmenu\menu_bg.gif" />
+    <Content Include="includes\images\contextmenu\m_arrow.gif" />
+    <Content Include="includes\images\contextmenu\m_item.gif" />
+    <Content Include="includes\images\contextmenu\m_splitLine.gif" />
+    <Content Include="includes\images\down.gif" />
+    <Content Include="includes\images\listofvalue.png" />
+    <Content Include="includes\images\logo.png" />
+    <Content Include="includes\images\right.gif" />
+    <Content Include="includes\images\user.png" />
+    <Content Include="includes\images\wait.gif" />
+    <Content Include="includes\js\frmlistofvalue.js" />
+    <Content Include="includes\js\grid.base.js" />
+    <Content Include="includes\js\grid.celledit.js" />
+    <Content Include="includes\js\grid.common.js" />
+    <Content Include="includes\js\grid.custom.js" />
+    <Content Include="includes\js\grid.formedit.js" />
+    <Content Include="includes\js\grid.grouping.js" />
+    <Content Include="includes\js\grid.import.js" />
+    <Content Include="includes\js\grid.inlinedit.js" />
+    <Content Include="includes\js\grid.jqueryui.js" />
+    <Content Include="includes\js\grid.loader.js" />
+    <Content Include="includes\js\grid.postext.js" />
+    <Content Include="includes\js\grid.setcolumns.js" />
+    <Content Include="includes\js\grid.subgrid.js" />
+    <Content Include="includes\js\grid.tbltogrid.js" />
+    <Content Include="includes\js\grid.treegrid.js" />
+    <Content Include="includes\js\header.js" />
+    <Content Include="includes\js\i18n\grid.locale-bg.js" />
+    <Content Include="includes\js\i18n\grid.locale-bg1251.js" />
+    <Content Include="includes\js\i18n\grid.locale-cat.js" />
+    <Content Include="includes\js\i18n\grid.locale-cn.js" />
+    <Content Include="includes\js\i18n\grid.locale-cs.js" />
+    <Content Include="includes\js\i18n\grid.locale-da.js" />
+    <Content Include="includes\js\i18n\grid.locale-de.js" />
+    <Content Include="includes\js\i18n\grid.locale-dk.js" />
+    <Content Include="includes\js\i18n\grid.locale-el.js" />
+    <Content Include="includes\js\i18n\grid.locale-en.js" />
+    <Content Include="includes\js\i18n\grid.locale-es.js" />
+    <Content Include="includes\js\i18n\grid.locale-fa.js" />
+    <Content Include="includes\js\i18n\grid.locale-fi.js" />
+    <Content Include="includes\js\i18n\grid.locale-fr.js" />
+    <Content Include="includes\js\i18n\grid.locale-gl.js" />
+    <Content Include="includes\js\i18n\grid.locale-he.js" />
+    <Content Include="includes\js\i18n\grid.locale-hu.js" />
+    <Content Include="includes\js\i18n\grid.locale-is.js" />
+    <Content Include="includes\js\i18n\grid.locale-it.js" />
+    <Content Include="includes\js\i18n\grid.locale-ja.js" />
+    <Content Include="includes\js\i18n\grid.locale-nl.js" />
+    <Content Include="includes\js\i18n\grid.locale-no.js" />
+    <Content Include="includes\js\i18n\grid.locale-pl.js" />
+    <Content Include="includes\js\i18n\grid.locale-pt-br.js" />
+    <Content Include="includes\js\i18n\grid.locale-pt.js" />
+    <Content Include="includes\js\i18n\grid.locale-ro.js" />
+    <Content Include="includes\js\i18n\grid.locale-ru.js" />
+    <Content Include="includes\js\i18n\grid.locale-sk.js" />
+    <Content Include="includes\js\i18n\grid.locale-sp.js" />
+    <Content Include="includes\js\i18n\grid.locale-sv.js" />
+    <Content Include="includes\js\i18n\grid.locale-tr.js" />
+    <Content Include="includes\js\i18n\grid.locale-ua.js" />
+    <Content Include="includes\js\InnosoftCustomLib.js" />
+    <Content Include="includes\js\jqDnR.js" />
+    <Content Include="includes\js\jqModal.js" />
+    <Content Include="includes\js\jquery-1.10.2.js" />
+    <Content Include="includes\js\jquery-1.10.2.min.js" />
+    <Content Include="includes\js\jquery-1.4.2.min.js" />
+    <Content Include="includes\js\jquery-1.9.0.min.js" />
+    <Content Include="includes\js\jquery-fluid16.js" />
+    <Content Include="includes\js\jquery-migrate-1.2.1.js" />
+    <Content Include="includes\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="includes\js\jquery-ui-1.8.1.custom.min.js" />
+    <Content Include="includes\js\jquery-ui-1.8.1.offset.datepicker.min.js" />
+    <Content Include="includes\js\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="includes\js\jquery-ui-1.8.4.custom.min.js" />
+    <Content Include="includes\js\jquery.autosize.js" />
+    <Content Include="includes\js\jquery.autosize.min.js" />
+    <Content Include="includes\js\jquery.contextmenu.js" />
+    <Content Include="includes\js\jquery.corner.js" />
+    <Content Include="includes\js\jquery.fmatter.js" />
+    <Content Include="includes\js\jquery.gvChart-0.1.min.js" />
+    <Content Include="includes\js\jquery.jqGrid.js" />
+    <Content Include="includes\js\jquery.jqGrid.min.js" />
+    <Content Include="includes\js\jquery.json-2.2.min.js" />
+    <Content Include="includes\js\jquery.layout.js" />
+    <Content Include="includes\js\jquery.reveal.js" />
+    <Content Include="includes\js\jquery.searchFilter.js" />
+    <Content Include="includes\js\jquery.ui.datepicker-th.js" />
+    <Content Include="includes\js\jquery.validity.js" />
+    <Content Include="includes\js\JsonXml.js" />
+    <Content Include="includes\js\menu.js" />
+    <Content Include="includes\js\ui.datepicker.js" />
+    <Content Include="includes\js\ui.multiselect.js" />
+    <Content Include="lib\DocumentFormat.OpenXml.dll">
+    </Content>
+    <Content Include="lib\DocumentFormat.OpenXml.xml" />
+    <Content Include="menu.inc">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="menublank.inc" />
+    <Content Include="menulogin.inc" />
+    <Content Include="sample-css\wi0009-16.gif" />
+    <Content Include="sample-css\wi0054-16.gif" />
+    <Content Include="sample-css\wi0062-16.gif" />
+    <Content Include="sample-css\wi0063-16.gif" />
+    <Content Include="sample-css\wi0096-16.gif" />
+    <Content Include="sample-css\wi0111-16.gif" />
+    <Content Include="sample-css\wi0122-16.gif" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExcelHelper.vb" />
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEditUser.aspx.designer.vb">
+      <DependentUpon>frmAddEditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEditUser.aspx.vb">
+      <DependentUpon>frmAddEditUser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmAutoGenForm.aspx.designer.vb">
+      <DependentUpon>frmAutoGenForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmAutoGenForm.aspx.vb">
+      <DependentUpon>frmAutoGenForm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmEvaluateFormPA.aspx.designer.vb">
+      <DependentUpon>frmEvaluateFormPA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluateFormPA.aspx.vb">
+      <DependentUpon>frmEvaluateFormPA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmFormPA.aspx.designer.vb">
+      <DependentUpon>frmFormPA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmFormPA.aspx.vb">
+      <DependentUpon>frmFormPA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEvaluateForm.aspx.designer.vb">
+      <DependentUpon>frmEvaluateForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluateForm.aspx.vb">
+      <DependentUpon>frmEvaluateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEvaluatePart00.aspx.designer.vb">
+      <DependentUpon>frmEvaluatePart00.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluatePart00.aspx.vb">
+      <DependentUpon>frmEvaluatePart00.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEvaluatePart01.aspx.designer.vb">
+      <DependentUpon>frmEvaluatePart01.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluatePart01.aspx.vb">
+      <DependentUpon>frmEvaluatePart01.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmEvaluatePart02.aspx.designer.vb">
+      <DependentUpon>frmEvaluatePart02.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluatePart02.aspx.vb">
+      <DependentUpon>frmEvaluatePart02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEvaluatePart03.aspx.designer.vb">
+      <DependentUpon>frmEvaluatePart03.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluatePart03.aspx.vb">
+      <DependentUpon>frmEvaluatePart03.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmEvaluateService.aspx.designer.vb">
+      <DependentUpon>frmEvaluateService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluateService.aspx.vb">
+      <DependentUpon>frmEvaluateService.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmLogin.aspx.designer.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.aspx.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLogout.aspx.designer.vb">
+      <DependentUpon>frmLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogout.aspx.vb">
+      <DependentUpon>frmLogout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMain.aspx.designer.vb">
+      <DependentUpon>frmMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.aspx.vb">
+      <DependentUpon>frmMain.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmPAService.aspx.designer.vb">
+      <DependentUpon>frmPAService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmPAService.aspx.vb">
+      <DependentUpon>frmPAService.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMainService.aspx.designer.vb">
+      <DependentUpon>frmMainService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainService.aspx.vb">
+      <DependentUpon>frmMainService.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmReport.aspx.designer.vb">
+      <DependentUpon>frmReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.aspx.vb">
+      <DependentUpon>frmReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmResponseFile.aspx.designer.vb">
+      <DependentUpon>frmResponseFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmResponseFile.aspx.vb">
+      <DependentUpon>frmResponseFile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmSuggestionForm.aspx.designer.vb">
+      <DependentUpon>frmSuggestionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuggestionForm.aspx.vb">
+      <DependentUpon>frmSuggestionForm.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="mEvaluate.vb" />
+    <Compile Include="ExcelHelper2.vb" />
+    <Compile Include="mUser.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Utilities.vb" />
+    <Compile Include="UtilitiesXML.vb" />
+    <Compile Include="Web References\account\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Evaluate.dll.config" />
+    <None Include="fonts\thsarabunnew-webfont.eot" />
+    <None Include="fonts\thsarabunnew-webfont.ttf" />
+    <None Include="fonts\thsarabunnew-webfont.woff" />
+    <None Include="fonts\thsarabunnew_bold-webfont.eot" />
+    <None Include="fonts\thsarabunnew_bold-webfont.ttf" />
+    <None Include="fonts\thsarabunnew_bold-webfont.woff" />
+    <None Include="fonts\thsarabunnew_bolditalic-webfont.eot" />
+    <None Include="fonts\thsarabunnew_bolditalic-webfont.ttf" />
+    <None Include="fonts\thsarabunnew_bolditalic-webfont.woff" />
+    <None Include="fonts\thsarabunnew_italic-webfont.eot" />
+    <None Include="fonts\thsarabunnew_italic-webfont.ttf" />
+    <None Include="fonts\thsarabunnew_italic-webfont.woff" />
+    <None Include="fonts\th_baijam-webfont.eot" />
+    <None Include="fonts\th_baijam-webfont.ttf" />
+    <None Include="fonts\th_baijam-webfont.woff" />
+    <None Include="fonts\th_baijam_bold-webfont.eot" />
+    <None Include="fonts\th_baijam_bold-webfont.ttf" />
+    <None Include="fonts\th_baijam_bold-webfont.woff" />
+    <None Include="fonts\th_baijam_bold_italic-webfont.eot" />
+    <None Include="fonts\th_baijam_bold_italic-webfont.ttf" />
+    <None Include="fonts\th_baijam_bold_italic-webfont.woff" />
+    <None Include="fonts\th_baijam_italic-webfont.eot" />
+    <None Include="fonts\th_baijam_italic-webfont.ttf" />
+    <None Include="fonts\th_baijam_italic-webfont.woff" />
+    <None Include="fonts\th_chakra_petch-webfont.eot" />
+    <None Include="fonts\th_chakra_petch-webfont.ttf" />
+    <None Include="fonts\th_chakra_petch-webfont.woff" />
+    <None Include="fonts\th_chakra_petch_bold-webfont.eot" />
+    <None Include="fonts\th_chakra_petch_bold-webfont.ttf" />
+    <None Include="fonts\th_chakra_petch_bold-webfont.woff" />
+    <None Include="fonts\th_chakra_petch_bold_italic-webfont.eot" />
+    <None Include="fonts\th_chakra_petch_bold_italic-webfont.ttf" />
+    <None Include="fonts\th_chakra_petch_bold_italic-webfont.woff" />
+    <None Include="fonts\th_chakra_petch_italic-webfont.eot" />
+    <None Include="fonts\th_chakra_petch_italic-webfont.ttf" />
+    <None Include="fonts\th_chakra_petch_italic-webfont.woff" />
+    <None Include="fonts\th_fahkwang-webfont.eot" />
+    <None Include="fonts\th_fahkwang-webfont.ttf" />
+    <None Include="fonts\th_fahkwang-webfont.woff" />
+    <None Include="fonts\th_fahkwang_bold-webfont.eot" />
+    <None Include="fonts\th_fahkwang_bold-webfont.ttf" />
+    <None Include="fonts\th_fahkwang_bold-webfont.woff" />
+    <None Include="fonts\th_fahkwang_bold_italic-webfont.eot" />
+    <None Include="fonts\th_fahkwang_bold_italic-webfont.ttf" />
+    <None Include="fonts\th_fahkwang_bold_italic-webfont.woff" />
+    <None Include="fonts\th_fahkwang_italic-webfont.eot" />
+    <None Include="fonts\th_fahkwang_italic-webfont.ttf" />
+    <None Include="fonts\th_fahkwang_italic-webfont.woff" />
+    <None Include="fonts\th_k2d_july8-webfont.eot" />
+    <None Include="fonts\th_k2d_july8-webfont.ttf" />
+    <None Include="fonts\th_k2d_july8-webfont.woff" />
+    <None Include="fonts\th_k2d_july8_bold-webfont.eot" />
+    <None Include="fonts\th_k2d_july8_bold-webfont.ttf" />
+    <None Include="fonts\th_k2d_july8_bold-webfont.woff" />
+    <None Include="fonts\th_k2d_july8_bold_italic-webfont.eot" />
+    <None Include="fonts\th_k2d_july8_bold_italic-webfont.ttf" />
+    <None Include="fonts\th_k2d_july8_bold_italic-webfont.woff" />
+    <None Include="fonts\th_k2d_july8_italic-webfont.eot" />
+    <None Include="fonts\th_k2d_july8_italic-webfont.ttf" />
+    <None Include="fonts\th_k2d_july8_italic-webfont.woff" />
+    <None Include="fonts\th_krub-webfont.eot" />
+    <None Include="fonts\th_krub-webfont.ttf" />
+    <None Include="fonts\th_krub-webfont.woff" />
+    <None Include="fonts\th_krub_bold-webfont.eot" />
+    <None Include="fonts\th_krub_bold-webfont.ttf" />
+    <None Include="fonts\th_krub_bold-webfont.woff" />
+    <None Include="fonts\th_krub_bold_italic-webfont.eot" />
+    <None Include="fonts\th_krub_bold_italic-webfont.ttf" />
+    <None Include="fonts\th_krub_bold_italic-webfont.woff" />
+    <None Include="fonts\th_krub_italic-webfont.eot" />
+    <None Include="fonts\th_krub_italic-webfont.ttf" />
+    <None Include="fonts\th_krub_italic-webfont.woff" />
+    <Content Include="includes\images\Thumbs.db" />
+    <Content Include="includes\js\grid.formedit.js.bak" />
+    <Content Include="includes\js\header.js.bak" />
+    <Content Include="includes\js\i18n\grid.locale-en.js.bak" />
+    <Content Include="includes\js\jquery-1.10.2.min.map" />
+    <Content Include="includes\js\jquery.jqGrid.js.bak" />
+    <Content Include="images\Thumbs.db" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\copy to inetpub.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="EvaluateConfig.js" />
+    <Content Include="EvaluateData.js" />
+    <Content Include="frmEvaluatePart00.aspx" />
+    <Content Include="frmEvaluatePart00.js" />
+    <Content Include="frmEvaluatePart01.aspx" />
+    <Content Include="frmEvaluatePart02.aspx" />
+    <Content Include="frmEvaluatePart02.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="frmEvaluatePart03.aspx" />
+    <Content Include="frmEvaluatePart03.js" />
+    <Content Include="frmLogin.js" />
+    <Content Include="frmResponseFile.aspx" />
+    <Content Include="template\template.xlsx" />
+    <Content Include="template\template01.xlsx">
+    </Content>
+    <Content Include="template\template02.xlsx" />
+    <Content Include="template\template03-10L.xlsx" />
+    <Content Include="template\template03-2L.xlsx" />
+    <Content Include="template\template03.xlsx" />
+    <Content Include="template\template00 - Copy.xlsx" />
+    <Content Include="template\template00.xlsx" />
+    <Content Include="template\template00x.xlsx" />
+    <None Include="Web References\account\AuthenticationService.wsdl" />
+    <None Include="Web References\account\AuthenticationService.xsd" />
+    <None Include="Web References\account\person.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\account\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://athena.kmutt.ac.th:8181/WebAuthenticationExternal/AuthenticationService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\account\</RelPath>
+      <UpdateFromURL>https://athena.kmutt.ac.th:8181/WebAuthenticationExternal/AuthenticationService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Evaluate_account_AuthenticationService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\template\" />
+    <Folder Include="includes\themes\redmond\images\" />
+    <Folder Include="obj\" />
+    <Folder Include="output\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>23356</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
