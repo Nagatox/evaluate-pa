@@ -271,10 +271,13 @@ function LoadPADetail01(username, revision, evaluate_year, round) {
         success: function(json) {
             //alert(json.recordCount);
             if (!json.isError) {
+                gRowNumArray = [3, 3, 3, 3, 3];
                 for (i = 0; i < json.recordCount; i++) {
                     //alert (json.detail[i].activate_detail);
                     var item_group_no = json.detail[i].item_group_no;
                     var item_no = json.detail[i].item_no;
+                    console.log('item_group_no:' + item_group_no + ' item_no:' + item_no + ' gRowNumArray:' + gRowNumArray[item_group_no-1] + ' json.detail[i].detail:' + json.detail[i].detail);   
+
                     if (json.detail[i].item_no > gRowNum) { CreateOneRow('#tbodyG_' + item_group_no, item_group_no, ++gRowNumArray[item_group_no-1]); }
 
                     $('#txtPADetail_' + item_group_no + '_' + item_no).val(json.detail[i].detail);

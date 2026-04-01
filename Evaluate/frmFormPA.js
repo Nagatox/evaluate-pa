@@ -164,23 +164,36 @@ $('#btnBossSave').click(function() {
     var count = 0;
     var i;
     for (item_group_no = 1; item_group_no <= 5; item_group_no++) {
-        //var index = i + 1;
         var new_id = 1;
         for (id = 1; id <= gRowNumArray[item_group_no-1]; id++) {
-
-            //if ($('#txtPADetail_' + item_group_no + '_' + id).val() != null) {
             if ($('#txtPAWeight_' + item_group_no + '_' + id).val() !== undefined) {
-        
                 var detail = new tblPADetail();
-                detail.username = username;
-                data.evaluate_year = evaluate_year;
-                data.round = round;
 
+                detail.username = username;
+                detail.evaluate_year = evaluate_year;
+                detail.round = round;
                 detail.item_group_no = item_group_no;
                 detail.item_no = new_id++;
 
+                detail.detail = $('#txtPADetail_' + item_group_no + '_' + id).val();
+                detail.detail2 = $('#txtPADetail2_' + item_group_no + '_' + id).val();
+                detail.weight = $('#txtPAWeight_' + item_group_no + '_' + id).val();
+                detail.month_08 = ($('#chkPAMonth_08_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_09 = ($('#chkPAMonth_09_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_10 = ($('#chkPAMonth_10_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_11 = ($('#chkPAMonth_11_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_12 = ($('#chkPAMonth_12_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_01 = ($('#chkPAMonth_01_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_02 = ($('#chkPAMonth_02_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_03 = ($('#chkPAMonth_03_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_04 = ($('#chkPAMonth_04_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_05 = ($('#chkPAMonth_05_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_06 = ($('#chkPAMonth_06_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.month_07 = ($('#chkPAMonth_07_' + item_group_no + '_' + id).is(':checked')) ? 1 : 0;
+                detail.KPI = $('#txtPAKPI_' + item_group_no + '_' + id).val();
+                detail.STG = $('#txtPASTG_' + item_group_no + '_' + id).val();
                 detail.comment = $('#txtPAComment_' + item_group_no + '_' + id).val();
-            
+
                 data.detail[count++] = detail;
             }
         }

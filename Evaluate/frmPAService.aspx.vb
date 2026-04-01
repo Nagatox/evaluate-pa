@@ -939,6 +939,23 @@ Partial Public Class frmPAService
 
             pConnection.BeginTrans()
 
+            ' Keep existing supervisor comments during user Save (avoid losing boss comment on subsequent user save)
+            Dim commentMap As New System.Collections.Hashtable
+            SQL = "SELECT item_group_no, item_no, comment FROM tblPADetail " & _
+                  " WHERE username = '" & username & "' " & _
+                  "   AND evaluate_year = '" & evaluate_year & "' " & _
+                  "   AND round = '" & round & "' " & _
+                  ""
+            Dim rs As ADODB.Recordset = pConnection.Execute(SQL)
+            While Not rs.EOF
+                Dim key As String = rs.Fields("item_group_no").Value & "|" & rs.Fields("item_no").Value
+                If Not commentMap.ContainsKey(key) Then
+                    commentMap.Add(key, rs.Fields("comment").Value)
+                End If
+                rs.MoveNext()
+            End While
+            If rs.State > 0 Then rs.Close()
+
             SQL = "DELETE FROM tblPADetail " & _
                   " WHERE username = '" & username & "' " & _
                   "   AND evaluate_year = '" & evaluate_year & "' " & _
@@ -994,6 +1011,14 @@ Partial Public Class frmPAService
 
             Dim i
             For i = 0 To objdata.recordCount - 1
+                Dim detailComment As String = ""
+                Dim keyComment As String = objdata.detail(i).item_group_no & "|" & objdata.detail(i).item_no
+                If Not String.IsNullOrEmpty(objdata.detail(i).comment) Then
+                    detailComment = objdata.detail(i).comment
+                ElseIf commentMap.ContainsKey(keyComment) Then
+                    detailComment = commentMap(keyComment)
+                End If
+
                 SQL = "INSERT INTO tblPADetail (username, evaluate_year, round, item_group_no " & _
                       "   , item_no, detail, detail2, weight " & _
                       "   , month_08, month_09, month_10 " & _
@@ -1025,7 +1050,7 @@ Partial Public Class frmPAService
                       " , '" & objdata.detail(i).month_07 & "' " & _
                       " , '" & Str2SQL(objdata.detail(i).KPI) & "' " & _
                       " , '" & objdata.detail(i).STG & "' " & _
-                      " , '" & Str2SQL(objdata.detail(i).comment) & "' " & _
+                      " , '" & Str2SQL(detailComment) & "' " & _
                       " , '" & objdata.detail(i).record_datetime & "' " & _
                       " , '" & objdata.detail(i).editor & "' " & _
                       " ) " & _
@@ -1306,15 +1331,17 @@ Partial Public Class frmPAService
                       ""
                 pConnection.Execute(SQL)
 
-                SQL = "UPDATE tblPADetail " & _
-                      " SET comment = '" & Str2SQL(objdata.detail(i).comment) & "' " & _
-                      " WHERE username = '" & username & "' " & _
-                      "   AND evaluate_year = '" & evaluate_year & "' " & _
-                      "   AND round = '" & round & "' " & _
-                      "   AND item_group_no = '" & objdata.detail(i).item_group_no & "' " & _
-                      "   AND item_no = '" & objdata.detail(i).item_no & "' " & _
-                      ""
-                pConnection.Execute(SQL)
+                If Not String.IsNullOrEmpty(objdata.detail(i).comment) Then
+                    SQL = "UPDATE tblPADetail " & _
+                          " SET comment = '" & Str2SQL(objdata.detail(i).comment) & "' " & _
+                          " WHERE username = '" & username & "' " & _
+                          "   AND evaluate_year = '" & evaluate_year & "' " & _
+                          "   AND round = '" & round & "' " & _
+                          "   AND item_group_no = '" & objdata.detail(i).item_group_no & "' " & _
+                          "   AND item_no = '" & objdata.detail(i).item_no & "' " & _
+                          ""
+                    pConnection.Execute(SQL)
+                End If
             Next i
 
 
